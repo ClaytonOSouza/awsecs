@@ -8,7 +8,7 @@ node {
     }
     stage('Push image') {
         docker.withRegistry('https://328527480917.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:328527480917') {
-            sh "docker push 328527480917.dkr.ecr.us-east-1.amazonaws.com/sitemeu:v4
+            sh "docker push 328527480917.dkr.ecr.us-east-1.amazonaws.com/sitemeu:v4"
         }
     }
 }
