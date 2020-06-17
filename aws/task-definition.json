@@ -1,0 +1,24 @@
+{
+    "family": "sitemeu",
+    "containerDefinitions": [
+        {
+            "image": "%ACCOUNT%.dkr.ecr.us-east-1.amazonaws.com/%REPO%:%BUILD_TAG%",
+            "name": "sitemeu",
+            "essential": true,
+            "cpu": 100,
+            "memoryReservation": 300,
+            "portMappings": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                },
+                {
+                    "containerPort": 443,
+                    "hostPort": 443,
+                    "protocol": "tcp"
+                }
+            ]
+        }
+    ]
+}
