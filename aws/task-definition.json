@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "image": "%ACCOUNT%.dkr.ecr.us-east-1.amazonaws.com/%REPO%:%BUILD_TAG%",
-            "name": "frontend",
+            "name": "sitemeu",
             "essential": true,
             "cpu": 100,
             "memoryReservation": 300,
