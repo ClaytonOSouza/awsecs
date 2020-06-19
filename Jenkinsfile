@@ -20,7 +20,8 @@ node {
         // with the remoteImageTag (imageTag-BUILD_NUMBER)
         // “s;%BUILD_NUMBER%;${BUILD_NUMBER};g”
         sh  "                                                                     \
-          echo $BUILD_TAG"                             \
+          echo $BUILD_TAG"   
+          def taskDefile      = "file://aws/task-definition.json"
                                 
         
         // Get current [TaskDefinition#revision-number]
@@ -97,6 +98,6 @@ node {
       }
       
     stage("BUILD SUCCEED") {
-        slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+        echo "SUCCESSFUL"
       }
   }
