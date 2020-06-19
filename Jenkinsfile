@@ -3,14 +3,14 @@ node {
     stage('Clone repository') {
         git branch: "master", url: "https://github.com/ClaytonOSouza/awsecs.git", credentialsId: "jenkins-example-github"
     }
+    stage('Build image') {
+        sh "docker build --build-arg APP_NAME=sitemeu -t 328527480917.dkr.ecr.us-east-1.amazonaws.com/sitemeu:$BUILD_NUMBER -f  Dockerfile ."
+    }
     stage('Teste node') {
         echo 'npm install -g broken-link-checker@^0.7.8 wait-on@^2.1.0'
         echo 'npm install && npm run start &'
         echo 'wait-on http://localhost:8080/ --timeout 90000'
         echo 'blc --recursive --exclude-external http://localhost:8080'
-    }
-    stage('Build image') {
-        sh "docker build --build-arg APP_NAME=sitemeu -t 328527480917.dkr.ecr.us-east-1.amazonaws.com/sitemeu:$BUILD_NUMBER -f  Dockerfile ."
     }
     stage('Push image') {
         docker.withRegistry('https://328527480917.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:328527480917') {
