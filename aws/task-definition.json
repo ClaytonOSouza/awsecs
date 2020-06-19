@@ -5,8 +5,8 @@
             "image": "328527480917.dkr.ecr.us-east-1.amazonaws.com/REPO:BUILD_TAG",
             "name": "sitemeu",
             "essential": true,
-            "cpu": 100,
-            "memoryReservation": 300,
+            "cpu": 1000,
+            "memoryReservation": 512,
             "portMappings": [
                 {
                     "containerPort": 8080,
