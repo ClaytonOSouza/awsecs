@@ -12,6 +12,9 @@ node {
         echo 'wait-on http://localhost:8080/ --timeout 90000'
         echo 'blc --recursive --exclude-external http://localhost:8080'
     }
+    stage('Scan Aplicação')
+        echo 'npm install && npm run test'
+    }
     stage('Push image') {
         docker.withRegistry('https://328527480917.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:328527480917') {
             sh "docker push 328527480917.dkr.ecr.us-east-1.amazonaws.com/sitemeu:$BUILD_NUMBER"
