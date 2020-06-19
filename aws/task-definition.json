@@ -2,7 +2,7 @@
     "family": "sitemeu",
     "containerDefinitions": [
         {
-            "image": "%ACCOUNT%.dkr.ecr.us-east-1.amazonaws.com/%REPO%:%BUILD_TAG%",
+            "image": "328527480917.dkr.ecr.us-east-1.amazonaws.com/%REPO%:%BUILD_TAG%",
             "name": "sitemeu",
             "essential": true,
             "cpu": 100,
