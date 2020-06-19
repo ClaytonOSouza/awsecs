@@ -4,7 +4,7 @@ node {
         git branch: "master", url: "https://github.com/ClaytonOSouza/awsecs.git", credentialsId: "jenkins-example-github"
     }
     stage('Teste node') {
-        sh 'npm install -g broken-link-checker@^0.7.8 wait-on@^2.1.0'
+        echo 'npm install -g broken-link-checker@^0.7.8 wait-on@^2.1.0'
         sh 'npm install && npm run start &'
         sh 'wait-on http://localhost:8080/ --timeout 90000'
         sh 'blc --recursive --exclude-external http://localhost:8080'
