@@ -12,7 +12,7 @@ node {
         echo 'wait-on http://localhost:8080/ --timeout 90000'
         echo 'blc --recursive --exclude-external http://localhost:8080'
     }
-    stage('Scan Aplicação')
+    stage('Scan Aplicação') {
         echo 'npm install && npm run test'
     }
     stage('Push image') {
