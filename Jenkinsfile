@@ -4,10 +4,10 @@ node {
         git branch: "master", url: "https://github.com/ClaytonOSouza/awsecs.git", credentialsId: "jenkins-example-github"
     }
     stage('Teste node') {
-        sh "npm install -g broken-link-checker@^0.7.8 wait-on@^2.1.0"
-        sh "npm install && npm run start &"
-        sh "wait-on http://localhost:8080/ --timeout 90000"
-        sh "blc --recursive --exclude-external http://localhost:3000"
+        sh 'npm install -g broken-link-checker@^0.7.8 wait-on@^2.1.0'
+        sh 'npm install && npm run start &'
+        sh 'wait-on http://localhost:8080/ --timeout 90000'
+        sh 'blc --recursive --exclude-external http://localhost:8080'
     }
     stage('Build image') {
         sh "docker build --build-arg APP_NAME=sitemeu -t 328527480917.dkr.ecr.us-east-1.amazonaws.com/sitemeu:$BUILD_NUMBER -f  Dockerfile ."
