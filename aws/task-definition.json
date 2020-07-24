@@ -2,7 +2,7 @@
     "family": "sitenode",
     "containerDefinitions": [
         {
-            "image": "328527480917.dkr.ecr.us-east-1.amazonaws.com/sitemeu:1",
+            "image": "328527480917.dkr.ecr.us-east-1.amazonaws.com/sitemeu:2",
             "name": "sitenode",
             "essential": true,
             "cpu": 1024,
