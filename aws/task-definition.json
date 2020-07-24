@@ -5,7 +5,7 @@
             "image": "328527480917.dkr.ecr.us-east-1.amazonaws.com/sitemeu:1",
             "name": "sitemeu",
             "essential": true,
-            "cpu": 1000,
+            "cpu": 1024,
             "memoryReservation": 512,
             "portMappings": [
                 {
