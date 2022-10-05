@@ -3,20 +3,25 @@
   "version": "1.0.0",
   "description": "nodejs image demo",
   "author": "Clayton Shark <sammy@example.com>",
-  "license": "MIT",
+  "license": "ISC",
   "main": "app.js",
   "keywords": [],
-    "license": "ISC",
-    "dependencies": {
-        "@godaddy/terminus": "^4.3.1",
-        "bluebird": "^3.7.2",
-        "compression": "^1.7.4",
-        "cors": "^2.8.5",
-        "express": "^4.17.1",
-        "helmet": "^3.22.0",
-        "mongoose": "^5.9.10",
-        "winston": "^3.2.1",
-        "yup": "^0.28.5"
-    }
+  "dependencies": {
+    "@godaddy/terminus": "^4.3.1",
+    "bluebird": "^3.7.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0",
+    "mongoose": "^5.13.15",
+    "winston": "^3.2.1",
+    "yup": "^0.30.0",
+    "@snyk/protect": "latest"
+  },
+  "scripts": {
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
 
